@@ -17,6 +17,11 @@
             </intent-filter>
         </activity>
         <service android:name=".Postmaster" />
+        <receiver android:name=".ConnectionReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED"></action>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

@@ -45,21 +45,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             s_email = findViewById(R.id.email);
             s_date = (EditText) findViewById(R.id.date);
 
-        final Intent intent = new Intent (this, Postmaster.class);
-        String name = "tgp";
-        //int age= 24;
 
-        Bundle extras = new Bundle();
-        extras.putString("USER", name);
-        //extras.putInt("USER", age);
-
-        intent.putExtras(extras);
 
 
             btn2.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     submit();
-                    startService(intent);
+                    passdata();
+                    //startService(intent);
                 }
             });
 
@@ -131,6 +124,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
             }
         }
+
+    public void passdata() {
+        String formDetails = s_acc.getText() + "*" + s_addr.getText() + "*" + s_date.getText() + "*" + s_email.getText() + "*" + s_fname.getText() + "*" + s_lname.getText();
+        Intent intent = new Intent(this, Postmaster.class);
+        intent.putExtra("name", formDetails);
+        startService(intent);
+    }
 
         public void openDialog(){
             AlertDialog.Builder a_builder = new AlertDialog.Builder(MainActivity.this);
