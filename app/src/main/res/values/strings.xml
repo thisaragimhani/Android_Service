@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">OnlineBankApp</string>
+
+    <string-array name="saluation">
+        <item>Other</item>
+        <item>Mr</item>
+        <item>Mrs</item>
+        <item>Prof</item>
+        <item>Dr</item>
+        <item>Rev</item>
+    </string-array>
+</resources>
